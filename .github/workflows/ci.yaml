@@ -19,7 +19,7 @@ jobs:
   test:
     name: Test
     # The type of runner that the job will run on
-    runs-on: macos-11
+    runs-on: ubuntu-latest
 
     # Service containers to run with `container-job`
     services:
@@ -51,10 +51,9 @@ jobs:
         uses: actions/setup-go@v2
 
       - name: install golang migrate
-        # run: |
-        #   curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.1/migrate.linux-amd64.tar.gz | tar xvz
-        #   sudo mv migrate.linux-amd64.tar.g /usr/bin/migrate
-        run: brew install golang-migrate
+        run: |
+          curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.1/migrate.linux-amd64.tar.gz | tar xvz
+          sudo mv migrate.linux-amd64 /usr/bin/migrate
 
       - name: run migrations
         run: migrate up
