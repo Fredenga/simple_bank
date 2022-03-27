@@ -9,12 +9,12 @@ import (
 
 type CreateAccountRequest struct {
 	Owner    string `json:"owner" binding:"required"`
-	Currency string `json:"currency" binding:"required",oneof=USD EUR CAD`
+	Currency string `json:"currency" binding:"required"`
 }
 
 func (server *Server) createAccount(ctx *gin.Context){
 	var req CreateAccountRequest
-	if err := ctx.ShouldBindJson(&req); err != nil {
+	if err := ctx.ShouldBindJSON(&req); err != nil {
 		ctx.JSON(http.StatusOK, errorResponse(err))
 		return
 	}
