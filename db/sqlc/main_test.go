@@ -29,3 +29,4 @@ func TestMain(m *testing.M) {
 	testQueries = New(testDB)
 	os.Exit(m.Run())
 }
+
