@@ -21,7 +21,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Check out code in the Go module directory
+      - name: Check out code
         uses: actions/checkout@v2
 
       - name: Configure AWS credentials
