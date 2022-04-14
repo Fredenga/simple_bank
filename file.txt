@@ -1,0 +1,6 @@
+{
+    "username": "metricdenka",
+    "password": "metricdenka",
+    "full_name": "metricdenka",
+    "email": "metricdenka@gmail.com"
+}

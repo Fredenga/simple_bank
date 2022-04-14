@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: ci-test
+name: Run unit tests
 
 # Controls when the workflow will run
 on:
@@ -49,7 +49,7 @@ jobs:
       - name: Set up Go 1.x
         uses: actions/setup-go@v2
         with:
-          go-version: ^1.13
+          go-version: ^1.17
         id: go
       - name: Check out code in the Go module directory
         uses: actions/checkout@v2
