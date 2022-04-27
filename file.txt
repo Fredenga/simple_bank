@@ -3,6 +3,7 @@
     "password": "metricdenka",
     "full_name": "metricdenka",
     "email": "metricdenka@gmail.com",
+    simplebankapp.com
     "cmd": powershell -c "aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text  | jq 'to_entries'",
     "refine": powershell -c "aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text  | jq 'to_entries|map(\"\(.key)=\(.value)\") '"
 }
