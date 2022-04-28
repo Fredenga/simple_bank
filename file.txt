@@ -6,4 +6,5 @@
     simplebankapp.com 
     "cmd": powershell -c "aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text  | jq 'to_entries'",
     "refine": powershell -c "aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text  | jq 'to_entries|map(\"\(.key)=\(.value)\") '"
-}
+}   # - name: Test
+      #   run: make test
