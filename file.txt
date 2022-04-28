@@ -4,5 +4,8 @@
     "full_name": "metricdenka",
     "email": "metricdenka@gmail.com",
     "cmd": powershell -c "aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text  | jq 'to_entries'",
-    "refine": powershell -c "aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text  | jq 'to_entries|map(\"\(.key)=\(.value)\") '"
+    "refine":aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text  | jq -r 'to_entries|map("\(.key)=\(.value)")|.[]' > app.env
+    285768857761.dkr.ecr.us-east-1.amazonaws.com
+	285768857761.dkr.ecr.us-east-1.amazonaws.com/simplebank:a75c224ec4503045a8f196c814bd828398f70920
+	kube: simple_bank
 }
