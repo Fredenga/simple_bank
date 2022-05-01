@@ -2,11 +2,11 @@ name: Deploy to production
 
 on:
   push:
-    branches: [ release ]
+    branches: [ master ]
 
 jobs:
 
-  deploy:
+  build:
     name: Build image
     runs-on: ubuntu-latest
 
