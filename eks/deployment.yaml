@@ -5,7 +5,7 @@ metadata:
   labels:
     app: simple-bank-api
 spec:
-  replicas: 2
+  replicas: 2 #pods
   selector:
     matchLabels:
       app: simple-bank-api
