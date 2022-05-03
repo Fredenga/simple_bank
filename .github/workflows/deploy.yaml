@@ -23,6 +23,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
           aws-region: us-east-1
 
       - name: Login to Amazon ECR
@@ -39,6 +40,7 @@ jobs:
           ECR_REPOSITORY: simplebank
           IMAGE_TAG: ${{ github.sha }}
         run: |
+
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t latest .
           docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
         
@@ -50,3 +52,4 @@ jobs:
           kubectl apply -f eks/issuer.yaml
           kubectl apply -f eks/ingress.yaml
           
+
