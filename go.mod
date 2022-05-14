@@ -22,4 +22,5 @@ require (
 	github.com/o1egl/paseto v1.0.0
 	github.com/spf13/viper v1.11.0
 	golang.org/x/crypto v0.0.0-20220427172511-eb4f295cb31f
+	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0 // indirect
 )
